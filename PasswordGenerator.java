@@ -7,13 +7,17 @@ public class PasswordGenerator {
         int lengthRequirement = retrieveInt("Enter amount of characters requirement: ");
         int numberRequirement = retrieveInt("Enter amount of numbers required: ");
         int specialCharacterRequirement = retrieveInt("Enter amount of special characters required: ");
-        boolean caseSensitivityRequirement = retrieveBoolean("Uppercase letters required (T/F): ");
+        boolean caseSensitivityRequirement = retrieveBoolean("Include special characters (Y/N): ");
         String generatedPassword = generatePassword(lengthRequirement,
                 numberRequirement,
                 specialCharacterRequirement,
                 caseSensitivityRequirement);
         System.out.println("Generating Password");
         System.out.println("Generated Password: " + generatedPassword);
+        boolean regenerate = retrieveBoolean("Generate another password? (Y/N): ");
+        if (regenerate) {
+            main(args);
+        }
     }
 
     public static int retrieveInt(String prompt) {
@@ -32,15 +36,15 @@ public class PasswordGenerator {
         System.out.print(prompt);
         try {
             return switch (scanner.next().toLowerCase()) {
-                case "t" -> true;
-                case "f" -> false;
+                case "y" -> true;
+                case "n" -> false;
                 default -> {
-                    System.out.println("Invalid input, must enter (T/F).");
+                    System.out.println("Invalid input, must enter (Y/N).");
                     yield retrieveBoolean(prompt);
                 }
             };
         } catch (Exception InputMismatchException){
-            System.out.println("Invalid input, must enter (T/F).");
+            System.out.println("Invalid input, must enter (Y/N).");
             return retrieveBoolean(prompt);
         }
     }
