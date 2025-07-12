@@ -9,7 +9,7 @@ public class PasswordGenerator {
         int lengthRequirement = retrieveInt("Enter amount of characters requirement: ");
         int numberRequirement = retrieveInt("Enter amount of numbers required: ");
         int specialCharacterRequirement = retrieveInt("Enter amount of special characters required: ");
-        boolean caseSensitivityRequirement = retrieveBoolean("Include special characters (Y/N): ");
+        boolean caseSensitivityRequirement = retrieveBoolean("Include capital letters (Y/N): ");
         String generatedPassword = generatePassword(lengthRequirement,
                 numberRequirement,
                 specialCharacterRequirement,
