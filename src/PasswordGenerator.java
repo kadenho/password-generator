@@ -14,7 +14,7 @@ public class PasswordGenerator {
                 numberRequirement,
                 specialCharacterRequirement,
                 caseSensitivityRequirement);
-        System.out.println("Generating Password");
+        System.out.println("Generating Password...");
         System.out.println("Generated Password: " + generatedPassword);
         boolean regenerate = retrieveBoolean("Generate another password? (Y/N): ");
         if (regenerate) {
