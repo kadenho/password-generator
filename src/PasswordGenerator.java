@@ -5,22 +5,6 @@ import java.util.Scanner;
 import java.util.Random;
 
 public class PasswordGenerator {
-    public static void main(String[] args) {
-        int lengthRequirement = retrieveInt("Enter amount of characters requirement: ");
-        int numberRequirement = retrieveInt("Enter amount of numbers required: ");
-        int specialCharacterRequirement = retrieveInt("Enter amount of special characters required: ");
-        boolean caseSensitivityRequirement = retrieveBoolean("Include capital letters (Y/N): ");
-        String generatedPassword = generatePassword(lengthRequirement,
-                numberRequirement,
-                specialCharacterRequirement,
-                caseSensitivityRequirement);
-        System.out.println("Generating Password...");
-        System.out.println("Generated Password: " + generatedPassword);
-        boolean regenerate = retrieveBoolean("Generate another password? (Y/N): ");
-        if (regenerate) {
-            main(args);
-        }
-    }
 
     public static int retrieveInt(String prompt) {
         Scanner scanner = new Scanner(System.in);
@@ -101,5 +85,22 @@ public class PasswordGenerator {
             assemblePasswordList.remove(randomIndex);
         }
         return generatedPassword.toString();
+    }
+
+    public static void main(String[] args) {
+        int lengthRequirement = retrieveInt("Enter amount of characters requirement: ");
+        int numberRequirement = retrieveInt("Enter amount of numbers required: ");
+        int specialCharacterRequirement = retrieveInt("Enter amount of special characters required: ");
+        boolean caseSensitivityRequirement = retrieveBoolean("Include capital letters (Y/N): ");
+        String generatedPassword = generatePassword(lengthRequirement,
+                numberRequirement,
+                specialCharacterRequirement,
+                caseSensitivityRequirement);
+        System.out.println("Generating Password...");
+        System.out.println("Generated Password: " + generatedPassword);
+        boolean regenerate = retrieveBoolean("Generate another password? (Y/N): ");
+        if (regenerate) {
+            main(args);
+        }
     }
 }
