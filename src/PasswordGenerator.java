@@ -14,7 +14,7 @@ public class PasswordGenerator {
                 numberRequirement,
                 specialCharacterRequirement,
                 caseSensitivityRequirement);
-        System.out.println("Generating Password");
+        System.out.println("Generating Password...");
         System.out.println("Generated Password: " + generatedPassword);
         boolean regenerate = retrieveBoolean("Generate another password? (Y/N): ");
         if (regenerate) {
@@ -88,7 +88,7 @@ public class PasswordGenerator {
         }else{
             if (lengthRequirement > 0){
                 for (int i = 0; i < lengthRequirement; i++) {
-                    String randomLetter = String.valueOf((char) ('A' + rand.nextInt(26)));
+                    String randomLetter = String.valueOf((char) ('a' + rand.nextInt(26)));
                     assemblePasswordList.add(randomLetter);
                 }
             }
