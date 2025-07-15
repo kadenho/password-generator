@@ -1,4 +1,4 @@
-package src;
+package kadenho.passwordgenerator;
 
 import java.util.ArrayList;
 import java.util.Scanner;
